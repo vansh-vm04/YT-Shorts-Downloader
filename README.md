@@ -1,1 +1,6 @@
-<h2>Simple website for downloading yt shorts in less time.</h2>
+## Simple website for downloading YT shorts.
+
+### Tech Stack used -:
+* React.js
+* Node.js
+* Express.js
