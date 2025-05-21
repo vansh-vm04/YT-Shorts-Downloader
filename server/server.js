@@ -12,12 +12,10 @@ app.get("/download", async (req, res) => {
 
     res.setHeader("Content-Disposition", "attachment; filename=video.mp4");
     res.setHeader("Content-Type", "video/mp4");
-    res.setHeader('Connection', 'keep-alive');
-    res.flushHeaders();
 
     const ytProcess = ytdlp.exec(videoUrl, {
         output: "-",
-        format: "mp4", 
+        format: "mp4",  
     });
 
     ytProcess.stdout.pipe(res);

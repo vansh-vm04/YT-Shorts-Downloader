@@ -18,7 +18,8 @@ function App() {
             if (!response.ok) throw new Error("Failed to download");
 
             // Create a blob from the response
-            const blob = await response.blob();
+            const buffer = await response.arrayBuffer();
+            const blob = new Blob([buffer], { type: "video/mp4" });
             const downloadUrl = window.URL.createObjectURL(blob);
 
             // Create an anchor link and trigger download
